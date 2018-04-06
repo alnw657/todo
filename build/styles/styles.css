@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0; }
+
+header {
+  background-color: #e5edfc;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  header .logo {
+    max-width: 60px; }
+  header h1 {
+    margin: 0;
+    padding: 5px; }
+
+#task-form {
+  display: flex;
+  flex-direction: row; }
+  #task-form input {
+    flex: 1;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #74a0ed;
+    background-color: #e5edfc; }
+  #task-form input:focus {
+    background-color: white;
+    outline: none; }
+  #task-form button {
+    max-width: 100px;
+    padding: 5px;
+    background-color: azure;
+    color: white; }
