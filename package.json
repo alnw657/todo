@@ -1,0 +1,41 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "todo list using javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alnw657/todo.git"
+  },
+  "keywords": [
+    "todo",
+    "list"
+  ],
+  "author": "ALAN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alnw657/todo/issues"
+  },
+  "homepage": "https://github.com/alnw657/todo#readme",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "browserify": "^16.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-prettify": "^0.5.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-watch": "^5.0.0",
+    "run-sequence": "^2.2.1",
+    "tsify": "^3.0.4",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-typescript": "^4.0.2",
+    "typescript": "^2.8.1"
+  }
+}
