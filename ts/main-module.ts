@@ -47,10 +47,36 @@ class ListView{
         this.list.innerHTML ='';
     }
 }
+
+class DataStorage{
+    storage;
+    constructor(){
+        this.storage = window.localStorage;
+    }
+    store( array:Array <Task> ){
+        let data = JSON.stringify( array);
+        this.storage.setItem('taskdata', data);
+    }
+        read(){
+            let data = this.storage.getItem('taskdata');
+            let array = JSON.parse(data);
+            return array;
+        }
+    }
+
 //initialise
-var taskarray = [];
+var taskarray:Array<any> = [];
+var taskstorage = new DataStorage();
 var taskmanager = new TaskManager(taskarray);
 var listview = new ListView('task-list');
+
+window.addEventListener('load', () => {
+   let taskdata = taskstorage.read();
+   
+    taskdata.forEach((item) => {taskarray.push(item);});
+    listview.render(taskarray);
+});
+
 
 //reference to form
 const taskform = (<HTMLFormElement> document.getElementById('task-form'));
@@ -63,5 +89,6 @@ const input = document.getElementById('task-input');
     let task = new Task( taskname );
     taskmanager.add( task );
     listview.clear();
+    taskstorage.store(taskarray);
     listview.render(taskarray);
 });

@@ -79,6 +79,9 @@ header{
                     outline: none;
                     background-color: #cccccc;
                 }
+                button[data-function='status']{
+                    font-size: 1em;
+                }
             }
         }
     }
