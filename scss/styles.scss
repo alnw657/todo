@@ -16,8 +16,12 @@ $theme-dark: darken( $theme-color, 25%);
   flex-direction: $direction;
 }
 
+*{
+    box-sizing: border-box;
+}
 body{
   @include reset;
+    overflow: hidden;
 }
 
 header{
@@ -83,6 +87,13 @@ header{
                     font-size: 1em;
                 }
             }
+        }
+    }
+    li[data-status="true"]{
+        background-color: #eeeeee;
+        .task-name{
+            text-decoration: line-through;
+            opacity: 0.5;
         }
     }
 }

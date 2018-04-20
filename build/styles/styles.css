@@ -1,6 +1,10 @@
+* {
+  box-sizing: border-box; }
+
 body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  overflow: hidden; }
 
 header {
   background-color: #e5edfc;
@@ -58,3 +62,8 @@ header {
           background-color: #cccccc; }
         #task-list li .task-container .task-buttons button[data-function='status'] {
           font-size: 1em; }
+  #task-list li[data-status="true"] {
+    background-color: #eeeeee; }
+    #task-list li[data-status="true"] .task-name {
+      text-decoration: line-through;
+      opacity: 0.5; }
