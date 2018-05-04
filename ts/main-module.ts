@@ -6,9 +6,12 @@ import{ListView} from '../ts/listview';
 
 import{DataStorage} from '../ts/datastorage';
 
+import * as moment from 'moment';
+
+
 //initialise
 var taskarray:Array<any> = [];
-var taskstorage = new DataStorage();
+var taskstorage = new DataStorage('taskdata');
 var taskmanager = new TaskManager(taskarray);
 var listview = new ListView('task-list');
 
@@ -32,27 +35,25 @@ const taskform = (<HTMLFormElement> document.getElementById('task-form'));
 taskform.addEventListener('submit',( event: Event) => {
   event.preventDefault();
 const input = document.getElementById('task-input');
-  let taskname:string = (<HTMLInputElement>input).value;
+  let taskname = (<HTMLInputElement>input).value;
     taskform.reset();
  // console.log(taskname);
-    if (taskname.length > 0){
-         let task = new Task( taskname );
+if (taskname.length > 0){
+    let task = new Task( taskname );
     taskmanager.add( task );
     listview.clear();
-        
-    };
-   
     taskstorage.store(taskarray, (result) => {
         if(result){ 
-        taskform.reset();
-        listview.clear();
+            taskform.reset();
+            listview.clear();
             listview.render(taskarray);
         }
         else{
             //error to do with storage
         }
-    } );
+    });
     listview.render(taskarray);
+}
 });
 
 function getParentId(elm:Node){
@@ -83,18 +84,19 @@ listelement.addEventListener('click',(event:Event) => {
             });
         }
     }
-    if(target.getAttribute('data-function')== 'delete'){
-        if(id){
-            taskmanager.delete(id,() => {
-                taskstorage.store(taskarray,() => {
-                listview.clear();
-                    listview.render(taskarray);
-                });
+    if( target.getAttribute('data-function') == 'delete'){
+    if( id ){
+      taskmanager.delete( id, () => {
+        taskstorage.store( taskarray, () => {
+          listview.clear();
+          listview.render( taskarray );
                //listview.clear();
                // listview.render(taskarray);
             });
-        }
+        });
     }
+    }
+                         
 });
 
 

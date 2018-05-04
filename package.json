@@ -36,6 +36,8 @@
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.3",
     "gulp-typescript": "^4.0.2",
+    "moment": "^2.22.1",
+    "npm": "^6.0.0",
     "typescript": "^2.8.1"
   }
 }

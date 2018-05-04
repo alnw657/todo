@@ -1,6 +1,8 @@
-$theme-color: #74a0ed;
-$theme-light: lighten( $theme-color, 25%);
-$theme-dark: darken( $theme-color, 25%);
+$watermelon-red: #e74c3c;
+$theme-light: lighten( $watermelon-red, 25%);
+$theme-dark: darken( $watermelon-red, 25%);
+$alan-color: #028097;
+$mint: #a5e4ef;
 
 @mixin reset {
   margin:0;
@@ -25,12 +27,17 @@ body{
 }
 
 header{
-  background-color: $theme-light;
+  background-color: $alan-color;
   @include flex(row);
   justify-content: space-between;
   align-items: center;
+    font-family: "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+color: white;
   .logo{
     max-width:60px;
+    padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
   }
   h1{
     margin: 0;
@@ -38,14 +45,17 @@ header{
   }
 }
 
+
+
 #task-form{
   @include flex(row);
   input{
     flex: 1;
     padding: 5px;
     box-sizing: border-box;
-    border: 1px solid $theme-color;
-    background-color: $theme-light;
+    border: 1px solid $watermelon-red;
+    background-color: white;
+      font-family: "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
   }
   input:focus{
     background-color: white;
@@ -54,13 +64,22 @@ header{
   button{
     max-width: 100px;
     padding: 5px;
-    background-color: azure;
+    background-color: $watermelon-red;
     color: white;
+      font-family: "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+      -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+
   }
+    button:hover{
+         background-color: #4CAF50;
+    color: white;
+    }
 }
 #task-list{
     @include reset;
     list-style: none;
+    font-family: "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     li{
         
         border-bottom: 1px solid #cccccc;
@@ -81,7 +100,7 @@ header{
                 }
                 button:focus{
                     outline: none;
-                    background-color: #cccccc;
+                    background-color: $mint;
                 }
                 button[data-function='status']{
                     font-size: 1em;
@@ -90,7 +109,7 @@ header{
         }
     }
     li[data-status="true"]{
-        background-color: #eeeeee;
+        background-color: $theme-light;
         .task-name{
             text-decoration: line-through;
             opacity: 0.5;
