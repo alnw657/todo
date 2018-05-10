@@ -24,24 +24,29 @@ $mint: #a5e4ef;
 body{
   @include reset;
     overflow: hidden;
+  background-color: #b5e1e9;
 }
 
 header{
   background-color: $alan-color;
   @include flex(row);
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-    font-family: "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  
+  font-family: "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 color: white;
   .logo{
     max-width:60px;
     padding-top: 10px;
-      padding-bottom: 10px;
-      padding-left: 10px;
+   padding-bottom: 10px;
+    padding-left: 10px;
+    
+    //align-items: center;
   }
   h1{
     margin: 0;
     padding: 5px;
+   // text-align: center
   }
 }
 
@@ -49,6 +54,7 @@ color: white;
 
 #task-form{
   @include flex(row);
+  
   input{
     flex: 1;
     padding: 5px;
@@ -69,16 +75,19 @@ color: white;
       font-family: "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
       -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
+   
 
   }
     button:hover{
-         background-color: #4CAF50;
-    color: white;
+         background-color: antiquewhite;
+      color: black;
+   
     }
 }
 #task-list{
     @include reset;
     list-style: none;
+    background-color: antiquewhite;
     font-family: "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     li{
         
