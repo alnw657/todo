@@ -36,6 +36,9 @@ export class TaskManager{
     this.sort( this.tasks );
     callback();
   }
+  
+  
+  
   sort( tasks:Array<Task> ){
     tasks.sort((task1,task2) => {
       let id1:number = parseInt( task1.id );
@@ -51,4 +54,24 @@ export class TaskManager{
       }
     })
   }
+  
+  changeColor(id:string,callback):void{
+  this.tasks.forEach( (task:Task) => {
+      if(task.id  === id){
+        if( task.color == false ){
+          task.color = true;
+          return;
+        }
+        else{
+          task.color = false;
+        }
+      }
+    });
+    this.sort( this.tasks );
+   
+    callback();
+  }
+  
+
+
 }

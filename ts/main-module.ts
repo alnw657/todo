@@ -95,4 +95,14 @@ listelement.addEventListener('click', (event:Event) => {
       });
     }
   }
+  if( target.getAttribute('data-function') == 'changecolor' ){
+    if( id ){
+      taskmanager.changeColor(id,() => {
+        taskstorage.store( taskarray , () => {
+          listview.clear();
+          listview.render( taskarray );
+        });
+      });
+    }
+  }
 });

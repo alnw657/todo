@@ -101,6 +101,7 @@ color: white;
             .task-buttons{
                 @include flex(row);
                 button{
+                    padding-top: 10px;
                     width: 48px;
                     height: 48px;
                     font-size: 1.5em;
@@ -108,12 +109,15 @@ color: white;
                     border: 1px solid transparent;
                 }
                 button:focus{
+                  padding-top: 10px;
                     outline: none;
                     background-color: $mint;
                 }
                 button[data-function='status']{
                     font-size: 1em;
                 }
+              
+                
             }
         }
     }
@@ -122,6 +126,16 @@ color: white;
         .task-name{
             text-decoration: line-through;
             opacity: 0.5;
+         
         }
-    }
+    
+    li[data-color="true"]{
+        .task-name{
+           color: red;
+         
+        }
+      }
+    
+}
+  
 }

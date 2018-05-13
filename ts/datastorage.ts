@@ -2,6 +2,7 @@ import { Task } from '../ts/task';
 
 export class DataStorage{
   status:boolean;
+  changecolor:boolean;
   dataname:string;
   constructor( dataname:string ){
     //check if local storage available

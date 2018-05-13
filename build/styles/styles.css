@@ -67,12 +67,14 @@ header {
         display: flex;
         flex-direction: row; }
         #task-list li .task-container .task-buttons button {
+          padding-top: 10px;
           width: 48px;
           height: 48px;
           font-size: 1.5em;
           background-color: transparent;
           border: 1px solid transparent; }
         #task-list li .task-container .task-buttons button:focus {
+          padding-top: 10px;
           outline: none;
           background-color: #a5e4ef; }
         #task-list li .task-container .task-buttons button[data-function='status'] {
@@ -82,3 +84,5 @@ header {
     #task-list li[data-status="true"] .task-name {
       text-decoration: line-through;
       opacity: 0.5; }
+    #task-list li[data-status="true"] li[data-color="true"] .task-name {
+      color: red; }
