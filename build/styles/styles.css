@@ -79,10 +79,12 @@ header {
           background-color: #a5e4ef; }
         #task-list li .task-container .task-buttons button[data-function='status'] {
           font-size: 1em; }
+        #task-list li .task-container .task-buttons button[data-function='changecolor'] {
+          font-size: 1em; }
   #task-list li[data-status="true"] {
     background-color: #f5b4ae; }
     #task-list li[data-status="true"] .task-name {
       text-decoration: line-through;
       opacity: 0.5; }
-    #task-list li[data-status="true"] li[data-color="true"] .task-name {
-      color: red; }
+  #task-list li[data-color="true"] .task-name {
+    color: red; }

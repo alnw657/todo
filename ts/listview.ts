@@ -16,9 +16,10 @@ export class ListView{
                             <div class="task-container">
                                 <div class="task-name">${name}</div>
                             <div class="task-buttons">
+                                <button type="button" data-function="changecolor">A</button>
                                 <button type="button" data-function="status">&#x2714;</button>
                                 <button type="button" data-function="delete">&times;</button>
-                                <button type="button" data-function="changecolor"><img src="images/a.png"</button>
+                               
             </div>
             </div>
             <li>`;

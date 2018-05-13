@@ -2,18 +2,20 @@ import { Task } from '../ts/task';
 
 export class DataStorage{
   status:boolean;
-  changecolor:boolean;
+  color:boolean;
   dataname:string;
   constructor( dataname:string ){
     //check if local storage available
     if( window.localStorage ){
     //local storage  available
       this.status = true;
+      this.color = true
       this.dataname = dataname;
     }
     else{
     //local storage not available
       this.status = false;
+      this.color = false
     }
   }
   read( callback ){

@@ -109,7 +109,7 @@ color: white;
                     border: 1px solid transparent;
                 }
                 button:focus{
-                  padding-top: 10px;
+                    padding-top: 10px;
                     outline: none;
                     background-color: $mint;
                 }
@@ -117,6 +117,9 @@ color: white;
                     font-size: 1em;
                 }
               
+                button[data-function='changecolor']{
+                    font-size: 1em;
+                }
                 
             }
         }
@@ -128,14 +131,12 @@ color: white;
             opacity: 0.5;
          
         }
-    
-    li[data-color="true"]{
+       
+}
+  li[data-color="true"]{
         .task-name{
            color: red;
          
         }
       }
-    
-}
-  
 }
